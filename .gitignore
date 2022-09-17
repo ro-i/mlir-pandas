@@ -1,0 +1,5 @@
+**/__pycache__
+**/venv
+**/*.log
+benchmarks/tpch_data
+benchmarks/dask-worker-space

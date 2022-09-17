@@ -1,0 +1,10 @@
+grizzly-sql
+memory_profiler
+modin[all]
+mypy
+numpy (>=1.23.0rc3)
+pandas
+psutil
+pyarrow
+pymlir
+pytest

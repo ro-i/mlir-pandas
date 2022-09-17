@@ -1,0 +1,215 @@
+>>>>> results for TPC-H 1
+>>- pandas:
+> result:
+  l_returnflag l_linestatus      sum_qty  ...     avg_price  avg_disc  count_order
+0            A            F   75478173.0  ...  38251.814164  0.050004      2959267
+1            N            F    1966480.0  ...    38248.3165  0.049996        77026
+2            N            O  148642120.0  ...  38232.562546  0.049981      5830202
+3            R            F   75577628.0  ...  38263.321544   0.04998      2962417
+
+[4 rows x 10 columns]
+> total duration: 9.71 s
+> maximum memory usage: 7.24 GB
+>>- mlir_pandas:
+> result:
+  l_returnflag l_linestatus      sum_qty  ...     avg_price  avg_disc  count_order
+0            A            F   75478173.0  ...  38251.814164  0.050004      2959267
+1            N            F    1966480.0  ...    38248.3165  0.049996        77026
+2            N            O  148642120.0  ...  38232.562546  0.049981      5830202
+3            R            F   75577628.0  ...  38263.321544   0.04998      2962417
+
+[4 rows x 10 columns]
+> total duration: 763.98 ms
+> maximum memory usage: 3.1 GB
+> timestamps:
+between init and pre mock init: 163 us
+between pre mock init and post mock init: 65 us
+between post mock init and init: 11.0 ms
+between init and init: 5.4 ms
+between init and init: 2.34 ms
+between init and init: 264 us
+between init and init: 6.6 ms
+between init and pre load to db: 6.89 ms
+between pre load to db and pre convert to pa.Table: 3 us
+between pre convert to pa.Table and post convert to pa.Table: 36.79 ms
+between post convert to pa.Table and post load to db: 126 us
+between post load to db and pre run: 7.79 ms
+between pre run and post run: 663.14 ms
+between post run and pre load from db: 3 us
+between pre load from db and post load from db: 195 us
+between post load from db and pre load from db: 226 us
+between pre load from db and post load from db: 22.39 ms
+total time bewteen init and post load from db: 763.38 ms
+> db_times:
+{'optimization': 4.0 ms, 'lowering to db': 4.7 ms, 'lowering to std': 5.4 ms, 'lowering to llvm': 4.9 ms, 'conversion': 4.2 ms, 'jit': 5.3 ms, 'runtime': 6.3 ms}
+>>- mlir:
+> result:
+  l_returnflag l_linestatus       sum_qty  ... avg_price avg_disc count_order
+0         b'A'         b'F'   75478173.00  ...  38251.81     0.05     2959267
+1         b'N'         b'F'    1966480.00  ...  38248.31     0.04       77026
+2         b'N'         b'O'  148642120.00  ...  38232.56     0.04     5830202
+3         b'R'         b'F'   75577628.00  ...  38263.32     0.04     2962417
+
+[4 rows x 10 columns]
+> total duration: 409.99 ms
+> maximum memory usage: 1.86 GB
+> timestamps:
+between pre load to db and post load to db: 505 us
+between post load to db and pre run: 2 us
+between pre run and post run: 393.95 ms
+between post run and pre load from db: 11 us
+between pre load from db and post load from db: 15.42 ms
+total time bewteen pre load to db and post load from db: 409.89 ms
+> db_times:
+{'optimization': 5.6 ms, 'lowering to db': 4.4 ms, 'lowering to std': 4.2 ms, 'lowering to llvm': 5.4 ms, 'conversion': 6.0 ms, 'jit': 4.1 ms, 'runtime': 5.5 ms}
+>>>>> results for TPC-H 5
+>>- pandas:
+> result:
+      n_name         revenue
+2  INDONESIA  115979499.6518
+0      CHINA  109568736.2163
+1      INDIA  106258458.1656
+3      JAPAN  104738341.0311
+4    VIETNAM   98052109.1293
+> total duration: 23.27 s
+> maximum memory usage: 7.01 GB
+>>- mlir_pandas:
+> result:
+      n_name         revenue
+2  INDONESIA  115979499.6518
+0      CHINA  109568736.2163
+1      INDIA  106258458.1656
+3      JAPAN  104738341.0311
+4    VIETNAM   98052109.1293
+> total duration: 2.09 s
+> maximum memory usage: 4.36 GB
+> timestamps:
+between init and pre mock init: 168 us
+between pre mock init and post mock init: 67 us
+between post mock init and init: 8.15 ms
+between init and pre mock init: 7 us
+between pre mock init and post mock init: 5 us
+between post mock init and init: 1.23 ms
+between init and pre mock init: 4 us
+between pre mock init and post mock init: 4 us
+between post mock init and init: 932 us
+between init and pre mock init: 4 us
+between pre mock init and post mock init: 4 us
+between post mock init and init: 524 us
+between init and pre mock init: 3 us
+between pre mock init and post mock init: 3 us
+between post mock init and init: 438 us
+between init and pre mock init: 3 us
+between pre mock init and post mock init: 3 us
+between post mock init and init: 2.72 ms
+between init and init: 6.02 ms
+between init and init: 3.48 ms
+between init and init: 5.3 ms
+between init and init: 898 us
+between init and init: 1.9 ms
+between init and init: 685 us
+between init and init: 1.48 ms
+between init and init: 531 us
+between init and init: 1.73 ms
+between init and init: 1.07 ms
+between init and init: 1.12 ms
+between init and init: 2.23 ms
+between init and init: 2.06 ms
+between init and init: 188 us
+between init and init: 3.08 ms
+between init and pre load to db: 3.52 ms
+between pre load to db and pre convert to pa.Table: 11 us
+between pre convert to pa.Table and post convert to pa.Table: 2.1 ms
+between post convert to pa.Table and pre convert to pa.Table: 1 us
+between pre convert to pa.Table and post convert to pa.Table: 8.29 ms
+between post convert to pa.Table and pre convert to pa.Table: 3 us
+between pre convert to pa.Table and post convert to pa.Table: 30.78 ms
+between post convert to pa.Table and pre convert to pa.Table: 3 us
+between pre convert to pa.Table and post convert to pa.Table: 208 us
+between post convert to pa.Table and pre convert to pa.Table: 903 ns
+between pre convert to pa.Table and post convert to pa.Table: 58 us
+between post convert to pa.Table and pre convert to pa.Table: 2 us
+between pre convert to pa.Table and post convert to pa.Table: 34 us
+between post convert to pa.Table and post load to db: 168 us
+between post load to db and pre run: 7.54 ms
+between pre run and post run: 1.96 s
+between post run and pre load from db: 3 us
+between pre load from db and post load from db: 223 us
+between post load from db and init: 185 us
+between init and pre load to db: 948 us
+between pre load to db and pre convert to pa.Table: 3 us
+between pre convert to pa.Table and post convert to pa.Table: 147 us
+between post convert to pa.Table and post load to db: 636 us
+between post load to db and pre run: 1.2 ms
+between pre run and post run: 21.0 ms
+between post run and pre load from db: 2 us
+between pre load from db and post load from db: 13.73 ms
+total time bewteen init and post load from db: 2.09 s
+> db_times:
+{'optimization': 10.1 ms, 'lowering to db': 10.3 ms, 'lowering to std': 10.3 ms, 'lowering to llvm': 8.1 ms, 'conversion': 9.2 ms, 'jit': 11.2 ms, 'runtime': 10.9 ms}
+>>- mlir:
+> result:
+      n_name         revenue
+0  INDONESIA  115979499.6518
+1      CHINA  109568736.2163
+2      INDIA  106258458.1656
+3      JAPAN  104738341.0311
+4    VIETNAM   98052109.1293
+> total duration: 905.57 ms
+> maximum memory usage: 2.5 GB
+> timestamps:
+between pre load to db and post load to db: 473 us
+between post load to db and pre run: 2 us
+between pre run and post run: 898.76 ms
+between post run and pre load from db: 13 us
+between pre load from db and post load from db: 6.12 ms
+total time bewteen pre load to db and post load from db: 905.37 ms
+> db_times:
+{'optimization': 4.3 ms, 'lowering to db': 5.3 ms, 'lowering to std': 5.9 ms, 'lowering to llvm': 4.8 ms, 'conversion': 5.9 ms, 'jit': 4.7 ms, 'runtime': 4.4 ms}
+>>>>> results for TPC-H 6
+>>- pandas:
+> result:
+150524172.23780003
+> total duration: 2.05 s
+> maximum memory usage: 5.18 GB
+>>- mlir_pandas:
+> result:
+150524172.23779926
+> total duration: 335.25 ms
+> maximum memory usage: 3.28 GB
+> timestamps:
+between init and pre mock init: 147 us
+between pre mock init and post mock init: 46 us
+between post mock init and init: 13.88 ms
+between init and init: 11.97 ms
+between init and init: 93 us
+between init and init: 183 us
+between init and init: 138 us
+between init and pre load to db: 6.15 ms
+between pre load to db and pre convert to pa.Table: 3 us
+between pre convert to pa.Table and post convert to pa.Table: 98.71 ms
+between post convert to pa.Table and post load to db: 138 us
+between post load to db and pre run: 8.25 ms
+between pre run and post run: 182.77 ms
+between post run and pre load from db: 3 us
+between pre load from db and post load from db: 11.19 ms
+between post load from db and init: 519 us
+between init and pre mock init: 4 us
+between pre mock init and post mock init: 3 us
+total time bewteen init and post mock init: 334.2 ms
+> db_times:
+{'optimization': 5.1 ms, 'lowering to db': 4.7 ms, 'lowering to std': 4.2 ms, 'lowering to llvm': 7.0 ms, 'conversion': 4.3 ms, 'jit': 4.8 ms, 'runtime': 3.9 ms}
+>>- mlir:
+> result:
+246093581.4185
+> total duration: 157.09 ms
+> maximum memory usage: 2.13 GB
+> timestamps:
+between pre load to db and post load to db: 542 us
+between post load to db and pre run: 2 us
+between pre run and post run: 150.29 ms
+between post run and pre load from db: 10 us
+between pre load from db and post load from db: 5.4 ms
+total time bewteen pre load to db and post load from db: 156.24 ms
+> db_times:
+{'optimization': 6.0 ms, 'lowering to db': 4.1 ms, 'lowering to std': 4.6 ms, 'lowering to llvm': 4.4 ms, 'conversion': 5.0 ms, 'jit': 6.2 ms, 'runtime': 4.6 ms}
